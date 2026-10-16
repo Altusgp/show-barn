@@ -1,0 +1,343 @@
+/* Accommodation measurements from the supplied 1920px Figma frame.
+   Images, copy, booking links, and image effects remain unchanged.
+   Explicitly marked estimates can be replaced when measurements are supplied. */
+@font-face {
+  font-family: 'Imperial Script';
+  src: url('../assets/fonts/imperial-script-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@media (min-width: 1101px) {
+  .accommodation-page {
+    --grid-line: rgba(152, 160, 146, .98);
+    /* Estimates: first photo height, second quote position, clipped banner height. */
+    --intro-photo-height: 807.43;
+    --custom-quote-gap: 100;
+    --sunset-height: 982.62;
+    position: relative;
+    isolation: isolate;
+  }
+  .accommodation-page .site-nav { border-bottom: 0; }
+  .accommodation-page .nav-inner-home { height: calc(194.41 * var(--u)); }
+
+  /* Figma Group 33: x=240, y=1403.04, 1440 x 10048.96. */
+  .accommodation-page .page-grid-lines {
+    display: block;
+    position: absolute;
+    inset: auto;
+    left: calc(var(--page-left) + 240 * var(--u));
+    top: calc(1403.04 * var(--u));
+    width: calc(1440 * var(--u));
+    height: calc(10048.96 * var(--u));
+    border: 1px solid var(--grid-line);
+    background: none;
+    opacity: 1;
+    pointer-events: none;
+  }
+  .accommodation-page .page-grid-lines::before,
+  .accommodation-page .page-grid-lines::after { display: none; }
+  .accommodation-page .intro-rows-band .section-shell,
+  .accommodation-page .dark-plans .section-shell,
+  .accommodation-page .cream-band .section-shell {
+    width: calc(1920 * var(--u));
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  /* Shared hero frame: x=22.725, y=194.41, 1874.55 x 1208.63. */
+  .accommodation-page .hero-shell.accommodation-hero .hero-copy {
+    position: absolute;
+    left: calc(343 * var(--u));
+    bottom: calc(121 * var(--u));
+    width: calc(1000 * var(--u));
+  }
+
+  /* Intro quote: x=483, y=1889.23, 954 x 243. */
+  .accommodation-page .intro-rows-band {
+    position: relative;
+    background: transparent;
+    padding: calc(486.19 * var(--u)) 0 calc(200 * var(--u));
+  }
+  .accommodation-page .intro-rows-band::before {
+    content: '';
+    position: absolute;
+    top: calc(286.19 * var(--u));
+    left: 0;
+    right: 0;
+    width: calc(1920 * var(--u));
+    margin-inline: auto;
+    height: 1px;
+    background: var(--grid-line);
+    pointer-events: none;
+  }
+  .accommodation-page .cabin-quote {
+    width: calc(954 * var(--u));
+    max-width: none;
+    min-height: calc(243 * var(--u));
+    margin: 0 auto calc(115.85 * var(--u));
+    font-family: 'Imperial Script', 'Dreams Script', cursive;
+    font-size: calc(80 * var(--u));
+    line-height: calc(81 * var(--u));
+  }
+  .accommodation-page .intro-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+  }
+  .accommodation-page .intro-row-copy p {
+    max-width: none;
+    font-size: calc(35 * var(--u));
+    line-height: calc(47 * var(--u));
+    text-align: left;
+  }
+  .accommodation-page .intro-row-copy p + p { margin-top: calc(47 * var(--u)); }
+  .accommodation-page .intro-row-image { flex: none; }
+  .accommodation-page .intro-row-image img {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  /* First copy x=353.48, y=2248.08, width=665.44; photo bounds estimated. */
+  .accommodation-page .intro-row-reverse { min-height: calc(var(--intro-photo-height) * var(--u)); }
+  .accommodation-page .intro-row-reverse .intro-row-copy {
+    order: 1;
+    flex: none;
+    margin-left: calc(353.48 * var(--u));
+    width: calc(665.44 * var(--u));
+    min-height: calc(470 * var(--u));
+  }
+  .accommodation-page .intro-row-reverse .intro-row-image {
+    order: 2;
+    align-self: flex-start;
+    margin-left: calc(53.08 * var(--u));
+    width: calc(848 * var(--u));
+  }
+  .accommodation-page .intro-row-reverse .intro-row-image img {
+    height: calc(var(--intro-photo-height) * var(--u));
+  }
+  .accommodation-page .intro-row + .cabin-quote {
+    min-height: calc(162 * var(--u));
+    margin-top: calc(var(--custom-quote-gap) * var(--u));
+    margin-bottom: calc(87 * var(--u));
+  }
+  /* Second photo: x=0, y=3404.51, 901.55 x 716.59. */
+  .accommodation-page .intro-row:not(.intro-row-reverse) { min-height: calc(716.59 * var(--u)); }
+  .accommodation-page .intro-row:not(.intro-row-reverse) .intro-row-image {
+    order: 1;
+    width: calc(901.55 * var(--u));
+  }
+  .accommodation-page .intro-row:not(.intro-row-reverse) .intro-row-image img {
+    height: calc(716.59 * var(--u));
+  }
+  .accommodation-page .intro-row:not(.intro-row-reverse) .intro-row-copy {
+    order: 2;
+    flex: none;
+    margin: calc(193.79 * var(--u)) 0 0 calc(108.75 * var(--u));
+    width: calc(538.92 * var(--u));
+    min-height: calc(329 * var(--u));
+  }
+
+  /* Options band: y=4321.1, 1920 x 1417.19; first photo y=4691.43. */
+  .accommodation-page #cabins {
+    background: #fff;
+    color: #343c31;
+    padding: calc(370.33 * var(--u)) 0 calc(70 * var(--u));
+    min-height: calc(1417.19 * var(--u));
+  }
+  .accommodation-page .cabin-grid {
+    width: calc(1874.55 * var(--u));
+    margin-inline: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: calc(33.15 * var(--u));
+  }
+  .accommodation-page .cabin-card { border-radius: 0; box-shadow: none; }
+  .accommodation-page .cabin-card img { height: calc(459.11 * var(--u)); }
+  .accommodation-page .cabin-card-body {
+    padding: calc(32 * var(--u)) calc(40 * var(--u)) 0;
+    text-align: center;
+  }
+  .accommodation-page .cabin-card-body h3 {
+    min-height: calc(56 * var(--u));
+    font-size: calc(46 * var(--u));
+    line-height: calc(56 * var(--u));
+    margin-bottom: calc(20 * var(--u));
+  }
+  .accommodation-page .cabin-card-body p.desc {
+    min-height: calc(56 * var(--u));
+    font-size: calc(20 * var(--u));
+    line-height: calc(28 * var(--u));
+    margin-bottom: calc(20 * var(--u));
+  }
+  .accommodation-page .cabin-card-body ul {
+    width: calc(427 * var(--u));
+    min-height: calc(146 * var(--u));
+    margin: 0 auto calc(28 * var(--u));
+    text-align: left;
+  }
+  .accommodation-page .cabin-card-body li {
+    padding-left: calc(30 * var(--u));
+    font-size: calc(20 * var(--u));
+    line-height: calc(28 * var(--u));
+    margin-bottom: calc(12 * var(--u));
+  }
+  .accommodation-page .cabin-card-body li::before {
+    width: calc(18 * var(--u));
+    height: calc(18 * var(--u));
+    font-size: calc(12 * var(--u));
+  }
+  .accommodation-page .cabin-card-body .btn {
+    max-width: 100%;
+    padding-inline: calc(24 * var(--u));
+  }
+
+  /* Banner y=5738.29; height estimated from the partially clipped inspector. */
+  .accommodation-page .full-photo {
+    width: calc(1920 * var(--u));
+    height: calc(var(--sunset-height) * var(--u));
+    margin-inline: auto;
+  }
+
+  /* Collection photo: x=0, y=6939.91, 828 x 883.64. */
+  .accommodation-page .cream-band {
+    background: transparent;
+    color: var(--text);
+    padding: calc(219 * var(--u)) 0 calc(200 * var(--u));
+  }
+  .accommodation-page .feature-cream {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-height: calc(883.64 * var(--u));
+  }
+  .accommodation-page .feature-cream-image { flex: none; width: calc(828 * var(--u)); }
+  .accommodation-page .feature-cream-image img { height: calc(883.64 * var(--u)); box-shadow: none; }
+  .accommodation-page .feature-cream-copy {
+    width: calc(600 * var(--u));
+    margin-left: calc(90.37 * var(--u));
+    padding: 0;
+  }
+  .accommodation-page .eyebrow {
+    font-size: calc(24 * var(--u));
+    line-height: calc(36 * var(--u));
+    margin-bottom: calc(12.76 * var(--u));
+  }
+  .accommodation-page .feature-cream-copy h2 {
+    width: calc(538.63 * var(--u));
+    max-width: none;
+    min-height: calc(223 * var(--u));
+    font-size: calc(60 * var(--u));
+    line-height: calc(70 * var(--u));
+    margin-bottom: calc(24 * var(--u));
+  }
+  .accommodation-page .feature-cream-copy p {
+    color: rgba(245,241,230,.85);
+    font-size: calc(28 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin-bottom: calc(24 * var(--u));
+    text-align: left;
+  }
+  .accommodation-page .feature-cream-copy .eyebrow {
+    font-size: calc(24 * var(--u));
+    line-height: calc(36 * var(--u));
+    margin-bottom: calc(12.76 * var(--u));
+  }
+  .accommodation-page .check-list {
+    width: calc(600 * var(--u));
+    min-height: calc(172 * var(--u));
+    margin-bottom: calc(24 * var(--u));
+  }
+  .accommodation-page .check-list li {
+    font-size: calc(20 * var(--u));
+    line-height: calc(28 * var(--u));
+    gap: calc(12 * var(--u));
+    margin-bottom: calc(12 * var(--u));
+  }
+  .accommodation-page .check-list li::before {
+    width: calc(18 * var(--u));
+    height: calc(18 * var(--u));
+    font-size: calc(12 * var(--u));
+  }
+
+  /* Serene band: y=8023.55, 1920 x 1227.84.
+     Confirmed photo: x=1072, y=8223.55, 848 x 827.84. */
+  .accommodation-page .cream-band + .dark-plans { padding: 0 0 calc(200 * var(--u)); background: transparent; }
+  .accommodation-page .dark-plans .plan-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: none;
+  }
+  .accommodation-page .plan-row img { flex: none; }
+  .accommodation-page .plan-copy { flex: none; padding: 0; }
+  .accommodation-page .plan-copy h3 {
+    font-size: calc(60 * var(--u));
+    line-height: calc(70 * var(--u));
+    margin-bottom: calc(60 * var(--u));
+  }
+  .accommodation-page .plan-copy p:not(.eyebrow) {
+    font-size: calc(28 * var(--u));
+    line-height: calc(38 * var(--u));
+    text-align: left;
+    margin-bottom: calc(45 * var(--u));
+  }
+  .accommodation-page .plan-row:first-child {
+    min-height: calc(1227.84 * var(--u));
+    padding: calc(200 * var(--u)) 0;
+    color: #343c31;
+    border-image: conic-gradient(#f3ede2 0 0) fill 0 / 0 / 0 100vmax;
+  }
+  .accommodation-page .plan-row:first-child img {
+    order: 2;
+    width: calc(848 * var(--u));
+    height: calc(827.84 * var(--u));
+    margin-left: auto;
+  }
+  .accommodation-page .plan-row:first-child .plan-copy {
+    order: 1;
+    width: calc(620.66 * var(--u));
+    margin: calc(62.62 * var(--u)) 0 0 calc(362 * var(--u));
+  }
+  /* Heading: x=362, y=8334.93, 552.01 x 223. */
+  .accommodation-page .plan-row:first-child h3 {
+    width: calc(552.01 * var(--u));
+    min-height: calc(223 * var(--u));
+    margin-bottom: calc(66.48 * var(--u));
+    letter-spacing: -.022em;
+  }
+  .accommodation-page .plan-row:first-child h3 em {
+    font-size: calc(80 * var(--u));
+    line-height: calc(80 * var(--u));
+  }
+  /* Paragraph: x=362, y=8624.41, 620.66 x 228. */
+  .accommodation-page .plan-row:first-child .plan-copy p:not(.eyebrow) {
+    min-height: calc(228 * var(--u));
+  }
+  .accommodation-page .plan-row:first-child .plan-copy p { color: #5a594f; }
+
+  /* Bourbon group: x=0, y=9451.39, 1558 x 786.88. */
+  .accommodation-page .plan-row:last-child {
+    width: calc(1558 * var(--u));
+    min-height: calc(786.88 * var(--u));
+    margin-top: calc(200 * var(--u));
+    padding: 0;
+    border-bottom: 2px solid #fff;
+  }
+  .accommodation-page .plan-row:last-child img {
+    order: 1;
+    width: calc(828 * var(--u));
+    height: calc(786.88 * var(--u));
+  }
+  .accommodation-page .plan-row:last-child .plan-copy {
+    order: 2;
+    width: calc(640 * var(--u));
+    margin: calc(60 * var(--u)) 0 0 calc(90 * var(--u));
+  }
+  .accommodation-page #cabins { scroll-margin-top: calc(194.41 * var(--u)); }
+}
+
+@media (max-width: 1100px) {
+  .accommodation-page .page-grid-lines { display: none; }
+}

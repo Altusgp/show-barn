@@ -1,0 +1,143 @@
+/* Wedding page measurements from the supplied 1920px Figma frame.
+   All content and image sources remain in index.html unchanged. */
+@media (min-width: 1101px) {
+  .wedding-page {
+    --grid-line: rgba(152, 160, 146, .98);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .wedding-page .site-nav { border-bottom: 0; }
+  .wedding-page .nav-inner-home { height: calc(194.41 * var(--u)); }
+  .wedding-page .page-grid-lines {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: none;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  /* Hero: 1874.55 x 1208.63, starting at y=194.41. */
+  .wedding-page .knot-badge {
+    left: calc(1170.265 * var(--u));
+    top: calc(947.53 * var(--u));
+    width: calc(421.41 * var(--u));
+    height: calc(436.53 * var(--u));
+    transform: rotate(-8.83deg);
+  }
+
+  /* Heading y=1603.04; first photo y=1943.04. */
+  .wedding-page .intro-rows-band { padding-top: calc(200 * var(--u)); }
+  .wedding-page .intro-heading-row {
+    height: calc(340 * var(--u));
+    padding-left: calc(360 * var(--u));
+  }
+  .wedding-page .intro-heading {
+    width: calc(785.88 * var(--u));
+    max-width: none;
+    min-height: calc(140 * var(--u));
+    font-size: calc(60 * var(--u));
+    line-height: calc(70 * var(--u));
+  }
+  .wedding-page .intro-rows-band::before,
+  .wedding-page .dark-plans::before {
+    width: calc(1920 * var(--u));
+    margin-inline: auto;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .wedding-page .intro-row-reverse { height: calc(716.59 * var(--u)); }
+  /* Copy at x=1013.23, y=2151.45, width=573.14. */
+  .wedding-page .intro-row-reverse .intro-row-copy {
+    margin-left: calc(110.2 * var(--u));
+    width: calc(573.14 * var(--u));
+    padding-top: calc(208.41 * var(--u));
+  }
+  .wedding-page .intro-row-reverse .intro-row-copy p {
+    min-height: calc(282 * var(--u));
+    font-size: calc(35 * var(--u));
+    line-height: calc(47 * var(--u));
+  }
+
+  /* Second photo: x=903.03, y=2659.63, 776.97 x 739.68. */
+  .wedding-page .intro-row:not(.intro-row-reverse) {
+    height: calc(739.68 * var(--u));
+    margin-bottom: calc(-83.26 * var(--u));
+  }
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-copy {
+    margin-left: calc(342 * var(--u));
+    width: calc(469.89 * var(--u));
+    padding-top: calc(149.84 * var(--u));
+  }
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-copy p {
+    min-height: calc(342 * var(--u));
+    font-size: calc(28 * var(--u));
+    line-height: calc(38 * var(--u));
+  }
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-image {
+    margin-left: calc(91.14 * var(--u));
+  }
+
+  /* Keep the existing portrait/cutout within the measured group bounds. */
+  .wedding-page .dreams-shell { container-type: normal; }
+  .wedding-page .dreams-heading { font-size: calc(129.528 * var(--u)); }
+  .wedding-page .dreams-photo {
+    top: calc(556 * var(--u));
+    left: calc(613.9 * var(--u));
+    width: calc(732.48 * var(--u));
+    height: calc(847.66 * var(--u));
+    object-fit: contain;
+  }
+
+  /* Dreams ends at y=5289.54; full-planning photo starts at y=5522.9. */
+  .wedding-page .dark-plans { padding-top: calc(233.36 * var(--u)); }
+  .wedding-page .plan-row:nth-child(1) {
+    height: calc(936.12 * var(--u));
+    margin-bottom: calc(400 * var(--u));
+  }
+  .wedding-page .plan-row:nth-child(1) img {
+    height: calc(936.12 * var(--u));
+  }
+  /* Full-width rule at y=6659.02. */
+  .wedding-page .dark-plans::before { top: calc(1369.48 * var(--u)); }
+
+  /* Partial planning: x=0, y=6859.02, 1558 x 850. */
+  .wedding-page .dark-plans .plan-row:nth-child(2) {
+    margin-bottom: calc(200 * var(--u));
+    border-bottom: 2px solid #fff;
+  }
+
+  /* Corporate band: y=7909.02, 1920 x 1336.12.
+     Photo: x=1072, y=8062.22, 848 x 1029.71. */
+  .wedding-page .dark-plans .plan-row:nth-child(3) {
+    height: calc(1336.12 * var(--u));
+    padding: calc(153.2 * var(--u)) 0 calc(153.21 * var(--u));
+    border-image: conic-gradient(#69715c 0 0) fill 0 / 0 / 0 100vmax;
+  }
+
+  /* Banner starts at y=9238.64, overlapping the corporate band by 6.5. */
+  .wedding-page .banner-overlay-band { margin-top: calc(-6.5 * var(--u)); }
+  /* Card: x=396, y=10228.02, width=1128, reference height=1292.
+     Allow extra height for the existing phone field, copy, and form messages. */
+  .wedding-page .banner-overlay-card.cta-card {
+    min-height: calc(1292 * var(--u));
+  }
+  .wedding-page .cta-card h2 {
+    font-size: calc(64 * var(--u));
+    line-height: calc(64 * var(--u));
+  }
+  .wedding-page .cta-card h2 em { line-height: calc(88 * var(--u)); }
+  .wedding-page .cta-card p { line-height: calc(36 * var(--u)); }
+  .wedding-page .cta-card .field-icon {
+    width: calc(18 * var(--u));
+    height: calc(18 * var(--u));
+  }
+  .wedding-page #contact-form,
+  .wedding-page #experience-plans { scroll-margin-top: calc(194.41 * var(--u)); }
+}
+
+@media (max-width: 1100px) {
+  .wedding-page .page-grid-lines { display: none; }
+}

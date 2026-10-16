@@ -1,0 +1,150 @@
+/* Homepage reference: dimensions are in the supplied 1920px desktop frame.
+   Shared page styles remain in style.css; these corrections affect home only. */
+@font-face {
+  font-family: 'Imperial Script';
+  src: url('assets/fonts/imperial-script-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.home-page {
+  --forest: #3d493c;
+  --cream: #f3ede2;
+}
+
+.home-page .site-nav { background: var(--forest); }
+.home-page .cream-band { background: var(--cream); }
+.home-page .hero-copy h1,
+.home-page .feature-cream-copy h2,
+.home-page .plan-copy h3,
+.home-page .banner-overlay-card h2 {
+  font-family: 'Cormorant Garamond', 'Dreams Serif', serif;
+  font-weight: 400;
+}
+.home-page .tour-band .tour-intro {
+  font-family: 'Imperial Script', 'Dreams Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #d7aa42;
+}
+.home-page .eyebrow {
+  font-family: 'Dreams Script', cursive;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.home-page .knot-badge:focus-visible { outline: 3px solid #d7aa42; outline-offset: 6px; }
+
+@media (min-width: 1101px) {
+  .home-page {
+    --grid-line: rgba(152, 160, 146, .98);
+    position: relative;
+    isolation: isolate;
+  }
+  .home-page .site-nav { border-bottom: 0; }
+  .home-page .nav-inner-home { height: calc(194.41 * var(--u)); }
+  /* Figma's two vertical rules belong to the page, at x=240 and x=1680.
+     Photos and solid section backgrounds cover them naturally. */
+  .home-page .page-grid-lines {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: none;
+    opacity: 1;
+    pointer-events: none;
+  }
+  .home-page .page-grid-lines::before,
+  .home-page .page-grid-lines::after {
+    width: 1px;
+    background: var(--grid-line);
+  }
+  /* Horizontal rules span the same 1920px frame as the sections. */
+  .home-page .intro-rows-band::before,
+  .home-page .tour-band::before,
+  .home-page .dark-plans::before {
+    width: calc(1920 * var(--u));
+    margin-inline: auto;
+    height: 1px;
+    background: var(--grid-line);
+    pointer-events: none;
+  }
+  /* Page x/y = 1192.99/1141.94; hero x/y = 22.725/194.41. */
+  .home-page .knot-badge {
+    left: calc(1170.265 * var(--u));
+    top: calc(947.53 * var(--u));
+    width: calc(421.41 * var(--u));
+    height: calc(436.53 * var(--u));
+    transform: rotate(-8.83deg);
+  }
+
+  /* Row two starts at y=2612.57 and ends at y=3428. */
+  .home-page .intro-rows-band { padding-top: calc(485.76 * var(--u)); }
+  .home-page .intro-rows-band::before { top: calc(286.19 * var(--u)); }
+  .home-page .intro-row:not(.intro-row-reverse) { height: calc(748.77 * var(--u)); }
+  .home-page .intro-row-reverse { height: calc(815.43 * var(--u)); }
+  .home-page .intro-row-copy .btn-outline-white { background: #fff; color: var(--forest); }
+
+  /* Rule y=3628; copy y=3828; tour y=4152.99; cream starts y=5272.8. */
+  .home-page .tour-band { padding: calc(400 * var(--u)) 0 calc(200 * var(--u)); }
+  .home-page .tour-band::before { top: calc(200 * var(--u)); }
+  .home-page .tour-band .tour-intro {
+    width: calc(1100.41 * var(--u));
+    max-width: none;
+    min-height: calc(248 * var(--u));
+    margin: 0 auto calc(76.99 * var(--u));
+    font-size: calc(60 * var(--u));
+    line-height: calc(62 * var(--u));
+  }
+  .home-page #tour { scroll-margin-top: calc(194.41 * var(--u)); }
+
+  /* 1920 x 1386.22; photo at x=1072, y=5522.9, size 848 x 936.12. */
+  .home-page .cream-band { padding: calc(250.1 * var(--u)) 0 calc(200 * var(--u)); }
+  .home-page .feature-cream { height: calc(936.12 * var(--u)); }
+  .home-page .feature-cream-copy .eyebrow,
+  .home-page .plan-copy .eyebrow,
+  .home-page .banner-overlay-card .eyebrow { text-transform: none; letter-spacing: 0; }
+  .home-page .feature-cream-copy .btn,
+  .home-page .plan-copy .btn,
+  .home-page .banner-overlay-card .btn { background: #c7bc9e; color: #303b30; border-color: transparent; }
+  .home-page .feature-cream-copy .btn::after { content: ' \2192'; }
+
+  /* Accommodations photo y=7078.02; next full-width photo y=8098. */
+  .home-page .dark-plans { padding: calc(419 * var(--u)) 0 calc(266.54 * var(--u)); }
+  .home-page .dark-plans .plan-row { height: calc(753.44 * var(--u)); }
+  .home-page .dark-plans::before { top: calc(199 * var(--u)); }
+
+  /* Events card x=396, y=9056, 1128 x 1628; gallery y=10121.71. */
+  .home-page .banner-overlay-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(46 * var(--u));
+    height: calc(1628 * var(--u));
+    margin: calc(-170.78 * var(--u)) auto calc(-562.29 * var(--u));
+    padding: calc(100 * var(--u)) calc(100 * var(--u)) calc(649 * var(--u));
+    background: #fff;
+    box-shadow: none;
+  }
+  .home-page .banner-overlay-card > * { flex-shrink: 0; }
+  .home-page .banner-overlay-card .eyebrow { font-size: calc(24 * var(--u)); line-height: calc(36 * var(--u)); }
+  .home-page .banner-overlay-card h2 {
+    max-width: calc(650 * var(--u));
+    font-size: calc(60 * var(--u));
+    line-height: calc(64 * var(--u));
+  }
+  .home-page .banner-overlay-card h2 em { line-height: calc(80 * var(--u)); }
+  .home-page .banner-overlay-card p { max-width: none; line-height: calc(32 * var(--u)); }
+  .home-page .banner-overlay-card h2,
+  .home-page .banner-overlay-card p,
+  .home-page .banner-overlay-card .btn { margin: 0; }
+  .home-page .gallery-strip-band { background: transparent; }
+  .home-page .gallery-strip {
+    margin-left: calc(50% - 1107.645 * var(--u));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page .page-grid-lines { display: none; }
+  .home-page .tour-band .tour-intro { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+}

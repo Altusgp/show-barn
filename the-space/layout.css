@@ -1,0 +1,186 @@
+/* The Space: measurements from the supplied 1920px Figma frame.
+   Original images, visible text, links, and form fields are preserved. */
+@font-face {
+  font-family: 'Imperial Script';
+  src: url('../assets/fonts/imperial-script-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Preserve the existing gallery layout below the desktop breakpoint. */
+.space-page .gallery-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1101px) {
+  .space-page {
+    --grid-line: rgba(152, 160, 146, .98);
+    position: relative;
+    isolation: isolate;
+  }
+  .space-page .site-nav { border-bottom: 0; }
+  .space-page .nav-inner-home { height: calc(189.86 * var(--u)); }
+  .space-page .page-grid-lines {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: none;
+    opacity: 1;
+    pointer-events: none;
+  }
+  .space-page .section-dark { background: transparent; }
+  .space-page .tour-band .section-shell,
+  .space-page .gallery-band .section-shell {
+    width: calc(1920 * var(--u));
+    max-width: 1920px;
+    margin-inline: auto;
+  }
+
+  /* Hero: x=22.725, y=189.86, 1874.55 x 955.55. */
+  .space-page .hero-image { height: calc(955.55 * var(--u)); }
+  /* Copy bounds estimated: exact text-box measurements were not provided. */
+  .space-page .hero-shell.space-hero .hero-copy {
+    position: absolute;
+    left: calc(343 * var(--u));
+    top: calc(390 * var(--u));
+    width: calc(1100 * var(--u));
+  }
+  .space-page .hero-text { margin-bottom: calc(20 * var(--u)); }
+  /* Badge: page x=1192.99, y=884.31, 421.41 x 436.53. */
+  .space-page .knot-badge {
+    left: calc(1170.265 * var(--u));
+    top: calc(694.45 * var(--u));
+    width: calc(421.41 * var(--u));
+    height: calc(436.53 * var(--u));
+    transform: rotate(-8.83deg);
+  }
+
+  /* Hero ends y=1145.41. Rule y=1438.35; quote y=1553.91. */
+  .space-page .tour-band {
+    position: relative;
+    padding: calc(408.5 * var(--u)) 0 calc(238.43 * var(--u));
+  }
+  .space-page .tour-band::before {
+    content: '';
+    position: absolute;
+    top: calc(292.94 * var(--u));
+    left: 0;
+    right: 0;
+    width: calc(1920 * var(--u));
+    height: 1px;
+    margin-inline: auto;
+    background: var(--grid-line);
+    pointer-events: none;
+  }
+  .space-page .tour-band .section-shell { position: relative; }
+  .space-page .space-tour-quote {
+    width: calc(1100.41 * var(--u));
+    max-width: none;
+    min-height: calc(248 * var(--u));
+    margin: 0 0 calc(76.99 * var(--u)) calc(416.93 * var(--u));
+    font-family: 'Imperial Script', 'Dreams Script', cursive;
+    font-size: calc(60 * var(--u));
+    line-height: calc(62 * var(--u));
+    color: #d7aa42;
+  }
+  /* Tour: x=142.39, y=1878.9, 1635.22 x 919.81. */
+  .space-page .tour-card {
+    width: calc(1635.22 * var(--u));
+    margin-left: calc(142.39 * var(--u));
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .space-page .tour-embed { padding-top: 0; height: calc(919.81 * var(--u)); }
+  .space-page .tour-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(172 * var(--u));
+    margin: 0;
+    font-size: calc(64 * var(--u));
+    line-height: 1;
+    font-style: normal;
+    color: #f5f1e6;
+    text-shadow: 0 2px 18px rgba(0,0,0,.35);
+    pointer-events: none;
+  }
+
+  /* Gallery rows: x=38.16, width=1843.68, height=905.84 each.
+     Row one y=3037.14; row two y=3974.97 => 31.99 between rows.
+     Later rows retain the same measured dimensions and spacing. */
+  .space-page .gallery-band { padding: 0 0 calc(205.53 * var(--u)); }
+  .space-page .gallery-grid {
+    width: calc(1843.68 * var(--u));
+    max-width: none;
+    margin-left: calc(38.16 * var(--u));
+    column-gap: calc(32 * var(--u));
+    row-gap: calc(31.99 * var(--u));
+  }
+  .space-page .gallery-grid img {
+    height: calc(905.84 * var(--u));
+    border-radius: 0;
+  }
+  .space-page .load-more-wrap { margin-top: calc(50 * var(--u)); }
+  .space-page .load-more-wrap .btn { height: calc(58 * var(--u)); }
+
+  /* Sunset banner: x=0, y=7070, 1920 x 1128.78. */
+  .space-page .banner-overlay-band { padding: 0 0 calc(137.18 * var(--u)); }
+  .space-page .banner-overlay-wrap { width: calc(1920 * var(--u)); }
+  .space-page .banner-overlay-img.tall { height: calc(1128.78 * var(--u)); }
+  /* Contact: x=396, y=8059.38, 1128 x 1000 (hug contents).
+     Extra content or validation messages may increase its height. */
+  .space-page .banner-overlay-card.cta-card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(46 * var(--u));
+    width: calc(1128 * var(--u));
+    min-height: calc(1000 * var(--u));
+    margin: calc(-139.4 * var(--u)) auto 0;
+    padding: calc(100 * var(--u));
+    background: #fff;
+    box-shadow: none;
+  }
+  .space-page .cta-card h2 {
+    font-size: calc(60 * var(--u));
+    line-height: calc(80 * var(--u));
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .space-page .cta-card h2 em {
+    display: inline;
+    font-size: calc(80 * var(--u));
+    line-height: calc(80 * var(--u));
+    margin: 0;
+  }
+  .space-page .cta-card p {
+    max-width: none;
+    font-size: calc(24 * var(--u));
+    line-height: calc(36 * var(--u));
+    margin: 0;
+  }
+  .space-page .cta-card .contact-form { margin: 0; padding: 0; border: none; }
+  .space-page .cta-card .form-row {
+    gap: calc(16 * var(--u));
+    margin-bottom: calc(16 * var(--u));
+  }
+  .space-page .cta-card .form-group { padding: calc(10 * var(--u)) calc(20 * var(--u)); }
+  .space-page .cta-card .form-group label { font-size: calc(18 * var(--u)); }
+  .space-page .cta-card .field-icon { width: calc(18 * var(--u)); height: calc(18 * var(--u)); }
+  .space-page .cta-card input,
+  .space-page .cta-card select,
+  .space-page .cta-card textarea { font-size: calc(20 * var(--u)); }
+  .space-page .cta-card textarea { min-height: calc(50 * var(--u)); }
+  .space-page .cta-card .contact-submit { height: calc(58 * var(--u)); padding-block: 0; }
+  .space-page #tour,
+  .space-page #gallery,
+  .space-page #contact-form { scroll-margin-top: calc(189.86 * var(--u)); }
+}
+
+@media (max-width: 1100px) {
+  .space-page .page-grid-lines { display: none; }
+}

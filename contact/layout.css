@@ -1,0 +1,172 @@
+/* Contact: measurements from the supplied 1920px Figma reference.
+   Preserve the original photo, wording, contact details, and form fields. */
+@media (min-width: 1101px) {
+  .contact-page {
+    --grid-line: rgba(152, 160, 146, .98);
+    position: relative;
+    isolation: isolate;
+  }
+  .contact-page .site-nav { border-bottom: 0; }
+  .contact-page .nav-inner-home { height: calc(185.31 * var(--u)); }
+  .contact-page .page-grid-lines {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: none;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  /* Hero: x=32.115, y=185.31, 1855.77 x 727.28. */
+  .showbarn-page.contact-page .contact-hero { padding: 0; }
+  .showbarn-page.contact-page .contact-hero-frame {
+    width: calc(1855.77 * var(--u));
+    margin-inline: auto;
+  }
+  .showbarn-page.contact-page .contact-hero-image { height: calc(727.28 * var(--u)); }
+
+  /* Form band: y=912.59, 1920 x 862.28. Allow content-driven expansion
+     for the original extra details, phone field, and validation messages. */
+  .showbarn-page.contact-page .contact-panel-band {
+    min-height: calc(862.28 * var(--u));
+    padding: calc(200 * var(--u)) 0 calc(40 * var(--u));
+    background: #69715c;
+    color: #f5f1e6;
+  }
+  /* Inner content bounds estimated from the reference's column alignment. */
+  .showbarn-page.contact-page .contact-panel-shell {
+    width: calc(1214 * var(--u));
+    max-width: 1920px;
+    margin-left: calc(var(--page-left) + 362 * var(--u));
+    margin-right: 0;
+    grid-template-columns: calc(540 * var(--u)) calc(610 * var(--u));
+    column-gap: calc(64 * var(--u));
+    row-gap: calc(16 * var(--u));
+    align-items: start;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+  .showbarn-page.contact-page .contact-panel-copy { display: contents; }
+  .contact-page .contact-panel-copy > .eyebrow {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    font-size: calc(22 * var(--u));
+    line-height: calc(28 * var(--u));
+    color: #f5f1e6;
+  }
+  .showbarn-page.contact-page .contact-panel-copy h1 {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: calc(64 * var(--u));
+    line-height: calc(68 * var(--u));
+    margin: 0;
+    color: #f5f1e6;
+  }
+  .showbarn-page.contact-page .contact-panel-copy > p {
+    grid-column: 1;
+    max-width: none;
+    margin: 0;
+    font-size: calc(20 * var(--u));
+    line-height: calc(28 * var(--u));
+    color: #f5f1e6;
+    text-align: left;
+  }
+  .contact-page .contact-panel-copy > p:nth-of-type(1) { grid-row: 3; }
+  .contact-page .contact-panel-copy > p:nth-of-type(2) { grid-row: 4; }
+
+  /* Preserve the existing address, director, phone, email, and hours in a
+     compact row below the main copy and form. */
+  .showbarn-page.contact-page .contact-list {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: calc(24 * var(--u));
+    max-width: none;
+    margin-top: calc(24 * var(--u));
+  }
+  .showbarn-page.contact-page .contact-list div {
+    padding-top: calc(16 * var(--u));
+    border-color: var(--grid-line);
+  }
+  .showbarn-page.contact-page .contact-list span {
+    font-size: calc(16 * var(--u));
+    line-height: calc(22 * var(--u));
+    margin-bottom: calc(8 * var(--u));
+    color: #f5f1e6;
+  }
+  .showbarn-page.contact-page .contact-list p {
+    max-width: none;
+    font-size: calc(18 * var(--u));
+    line-height: calc(26 * var(--u));
+    color: #f5f1e6;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .showbarn-page.contact-page .contact-panel-form {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    align-items: flex-start;
+  }
+  .showbarn-page.contact-page .contact-form { padding: 0; border: none; background: transparent; }
+  .showbarn-page.contact-page .contact-form .form-row {
+    gap: calc(12 * var(--u));
+    margin-bottom: calc(12 * var(--u));
+  }
+  .showbarn-page.contact-page .contact-form .form-group {
+    padding: calc(12 * var(--u)) calc(16 * var(--u));
+    background: #f7f7f4;
+  }
+  .showbarn-page.contact-page .contact-form .form-group label {
+    font-size: calc(18 * var(--u));
+    line-height: calc(24 * var(--u));
+    margin-bottom: calc(4 * var(--u));
+  }
+  .showbarn-page.contact-page .contact-form input,
+  .showbarn-page.contact-page .contact-form select,
+  .showbarn-page.contact-page .contact-form textarea {
+    padding: calc(4 * var(--u)) 0;
+    border: none;
+    font-size: calc(20 * var(--u));
+    line-height: calc(28 * var(--u));
+  }
+  .showbarn-page.contact-page .contact-form textarea { min-height: calc(100 * var(--u)); }
+  .showbarn-page.contact-page .contact-submit {
+    height: calc(58 * var(--u));
+    margin-top: 0;
+    padding-block: 0;
+  }
+  .showbarn-page.contact-page .contact-form input:focus-visible,
+  .showbarn-page.contact-page .contact-form select:focus-visible,
+  .showbarn-page.contact-page .contact-form textarea:focus-visible {
+    outline: 2px solid var(--tan-dark);
+    outline-offset: 2px;
+  }
+
+  /* Footer spacing estimated from the screenshot; retain the shared sizing. */
+  .contact-page .showbarn-footer {
+    position: relative;
+    border-top: none;
+    padding-top: calc(248 * var(--u));
+  }
+  .contact-page .showbarn-footer::before {
+    content: '';
+    position: absolute;
+    top: calc(100 * var(--u));
+    left: 0;
+    right: 0;
+    width: calc(1920 * var(--u));
+    margin-inline: auto;
+    height: 1px;
+    background: var(--grid-line);
+    pointer-events: none;
+  }
+  .contact-page #contact-form { scroll-margin-top: calc(185.31 * var(--u)); }
+}
+
+@media (max-width: 1100px) {
+  .contact-page .page-grid-lines { display: none; }
+}

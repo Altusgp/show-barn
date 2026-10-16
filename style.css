@@ -1631,3 +1631,941 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
     height: 320px;
   }
 }
+
+/* ===========================================================
+   FIGMA PAGES — desktop measurements from the Figma frames (1920px wide).
+   Every size is <figma px> * var(--u), so the page matches the frame
+   exactly at 1920px and scales proportionally on smaller desktops.
+   .figma-page rules (nav, hero, buttons, footer) are shared by every
+   measured page; .home-page / .wedding-page rules are page-specific.
+   =========================================================== */
+@media (min-width: 1101px){
+  .figma-page{
+    --u: calc(min(100vw, 1920px) / 1920);
+    /* Figma guide lines are hidden on the live site; set a colour here to show them */
+    --grid-line: transparent;
+    --page-left: max(0px, calc((100% - 1920 * var(--u)) / 2));
+  }
+
+  /* Grid lines: verticals at x=240 / x=1680, horizontals per section */
+  .figma-page .page-grid-lines{
+    display: none;
+  }
+
+  .figma-page .page-grid-lines::before,
+  .figma-page .page-grid-lines::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--grid-line);
+    left: calc(var(--page-left) + 240 * var(--u));
+  }
+
+  .figma-page .page-grid-lines::after{
+    left: calc(var(--page-left) + 1680 * var(--u));
+  }
+
+  .home-page .intro-rows-band,
+  .home-page .tour-band,
+  .home-page .dark-plans{
+    position: relative;
+  }
+
+  .home-page .intro-rows-band::before,
+  .home-page .tour-band::before,
+  .home-page .dark-plans::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--grid-line);
+  }
+
+  .home-page .intro-rows-band::before{ top: calc(287 * var(--u)); }
+  .home-page .tour-band::before{ top: calc(201 * var(--u)); }
+  .home-page .dark-plans::before{ top: calc(199 * var(--u)); }
+
+  .home-page .intro-rows-band .section-shell,
+  .home-page .tour-band .section-shell,
+  .home-page .cream-band .section-shell,
+  .home-page .dark-plans .section-shell,
+  .home-page .faq-band .section-shell{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  /* Buttons */
+  .figma-page .btn{
+    height: calc(58 * var(--u));
+    padding: 0 calc(34 * var(--u));
+    font-size: calc(18 * var(--u));
+    gap: calc(12 * var(--u));
+  }
+
+  /* ---------- Nav: 194 tall ---------- */
+  .figma-page .nav-inner-home{
+    max-width: 1920px;
+    height: calc(194 * var(--u));
+    padding: 0 calc(342 * var(--u)) 0 calc(236 * var(--u));
+  }
+
+  .figma-page .nav-logo-img{
+    height: calc(88 * var(--u));
+    transform: translateY(calc(-11 * var(--u)));
+  }
+
+  .figma-page .showbarn-links{
+    gap: calc(30 * var(--u));
+  }
+
+  .figma-page .showbarn-links a{
+    font-size: calc(17 * var(--u));
+    letter-spacing: .01em;
+  }
+
+  .figma-page .nav-cta-wrap .btn{
+    width: calc(248 * var(--u));
+    justify-content: center;
+    font-size: calc(19 * var(--u));
+    font-weight: 600;
+  }
+
+  /* ---------- Hero: 1874.55 x 1208.63, inset 22.72 ---------- */
+  .figma-page .hero-shell{
+    padding: 0;
+  }
+
+  .figma-page .hero-frame{
+    width: calc(1874.55 * var(--u));
+    border: none;
+  }
+
+  .figma-page .hero-image{
+    height: calc(1208.63 * var(--u));
+  }
+
+  .figma-page .hero-overlay{
+    display: block;
+    padding: 0;
+  }
+
+  .home-page .hero-shell.home-hero .hero-copy{
+    position: absolute;
+    left: calc(343 * var(--u));
+    top: calc(604 * var(--u));
+    width: calc(1100 * var(--u));
+  }
+
+  .figma-page .hero-copy h1{
+    font-size: calc(84 * var(--u));
+    line-height: calc(80 * var(--u));
+    margin: 0 0 calc(36 * var(--u));
+  }
+
+  .figma-page .hero-copy h1 em{
+    font-size: 1.12em;
+  }
+
+  .figma-page .hero-text{
+    max-width: calc(804 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
+    margin: 0 0 calc(64 * var(--u));
+    text-align: left;
+  }
+
+  .figma-page .hero-copy .btn{
+    width: calc(276 * var(--u));
+    justify-content: center;
+  }
+
+  /* Knot badge: 426 square, overlapping the hero bottom edge */
+  .figma-page .knot-badge{
+    position: absolute;
+    left: calc(1201 * var(--u));
+    top: calc(966 * var(--u));
+    width: calc(426 * var(--u));
+    height: calc(426 * var(--u));
+    margin: 0;
+  }
+
+  /* ---------- Intro rows ---------- */
+  .home-page .intro-rows-band{
+    background: transparent;
+    padding: calc(485 * var(--u)) 0 0;
+  }
+
+  .home-page .intro-row,
+  .home-page .intro-row-reverse{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+  }
+
+  .home-page .intro-row-copy p{
+    max-width: none;
+    font-size: calc(33 * var(--u));
+    line-height: calc(47 * var(--u));
+    text-align: left;
+  }
+
+  .home-page .intro-row-image img{
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Row 1: copy x=362 w=528, image x=970 761 x 748.77 */
+  .home-page .intro-row:not(.intro-row-reverse) .intro-row-copy{
+    flex: none;
+    margin-left: calc(362 * var(--u));
+    width: calc(528 * var(--u));
+    padding-top: calc(120 * var(--u));
+  }
+
+  .home-page .intro-row:not(.intro-row-reverse) .intro-row-image{
+    flex: none;
+    margin-left: calc(80 * var(--u));
+    width: calc(761 * var(--u));
+  }
+
+  .home-page .intro-row:not(.intro-row-reverse) .intro-row-image img{
+    height: calc(748.77 * var(--u));
+  }
+
+  /* Row 2: image x=141 682 x 815.43 (top 2612.57), copy x=1004 w=596 */
+  .home-page .intro-row-reverse{
+    margin-top: calc(-25 * var(--u));
+  }
+
+  .home-page .intro-row-reverse .intro-row-image{
+    flex: none;
+    align-self: flex-start;
+    margin-left: calc(141 * var(--u));
+    width: calc(682 * var(--u));
+  }
+
+  .home-page .intro-row-reverse .intro-row-image img{
+    height: calc(815.43 * var(--u));
+  }
+
+  .home-page .intro-row-reverse .intro-row-copy{
+    flex: none;
+    margin-left: calc(181 * var(--u));
+    width: calc(596 * var(--u));
+    padding-top: calc(168 * var(--u));
+  }
+
+  .home-page .intro-row-copy .hero-actions{
+    margin-top: calc(85 * var(--u));
+    gap: calc(24 * var(--u));
+  }
+
+  /* ---------- 3D tour: card 1635.22 x 919.81 at x=135 ---------- */
+  .home-page .tour-band{
+    padding: calc(403 * var(--u)) 0 calc(201 * var(--u));
+  }
+
+  .home-page .tour-band .tour-intro{
+    max-width: calc(1060 * var(--u));
+    margin: 0 auto calc(74 * var(--u));
+    font-size: calc(42 * var(--u));
+    line-height: calc(62 * var(--u));
+  }
+
+  .home-page .tour-card{
+    width: calc(1635.22 * var(--u));
+    margin: 0 0 0 calc(135 * var(--u));
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .home-page .tour-embed{
+    padding-top: 0;
+    height: calc(919.81 * var(--u));
+  }
+
+  .home-page .tour-card .tour-caption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(172 * var(--u));
+    margin: 0;
+    color: #f5f1e6;
+    font-style: normal;
+    font-size: calc(64 * var(--u));
+    line-height: 1;
+    letter-spacing: 0;
+    text-shadow: 0 2px 18px rgba(0,0,0,.35);
+    pointer-events: none;
+  }
+
+  /* ---------- Cream weddings band: 1386 tall, image 848 x 936.12 flush right ---------- */
+  .home-page .cream-band{
+    padding: calc(249 * var(--u)) 0 calc(201 * var(--u));
+  }
+
+  .home-page .feature-cream{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .home-page .feature-cream-copy{
+    flex: none;
+    margin-left: calc(362 * var(--u));
+    width: calc(640 * var(--u));
+    padding: 0;
+  }
+
+  .home-page .feature-cream-copy .eyebrow,
+  .home-page .plan-copy .eyebrow,
+  .home-page .banner-overlay-card .eyebrow{
+    font-size: calc(20 * var(--u));
+    line-height: calc(36 * var(--u));
+    margin: 0 0 calc(30 * var(--u));
+  }
+
+  .home-page .feature-cream-copy h2{
+    font-size: calc(66 * var(--u));
+    line-height: calc(72 * var(--u));
+    max-width: none;
+    margin: 0 0 calc(60 * var(--u));
+  }
+
+  .home-page .feature-cream-copy p,
+  .home-page .plan-copy p{
+    max-width: calc(564 * var(--u));
+    font-size: calc(24 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin-bottom: calc(38 * var(--u));
+    text-align: left;
+  }
+
+  .home-page .feature-cream-copy .btn{
+    width: calc(216 * var(--u));
+    height: calc(56 * var(--u));
+    justify-content: center;
+  }
+
+  .home-page .feature-cream-image{
+    flex: none;
+    margin-left: auto;
+    width: calc(848 * var(--u));
+  }
+
+  .home-page .feature-cream-image img{
+    height: calc(936.12 * var(--u));
+    box-shadow: none;
+  }
+
+  /* ---------- Cabins: image 828 x 753.44 flush left, copy x=918 ---------- */
+  .home-page .dark-plans{
+    background: transparent;
+    padding: calc(419 * var(--u)) 0 calc(268 * var(--u));
+  }
+
+  .home-page .dark-plans .plan-row{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .home-page .dark-plans .plan-row img{
+    flex: none;
+    width: calc(828 * var(--u));
+    height: calc(753.44 * var(--u));
+    border-radius: 0;
+  }
+
+  .home-page .plan-copy{
+    flex: none;
+    margin: calc(-20 * var(--u)) 0 calc(-30 * var(--u)) calc(90 * var(--u));
+    width: calc(628 * var(--u));
+    padding: 0;
+  }
+
+  .home-page .plan-copy h3{
+    font-size: calc(70 * var(--u));
+    line-height: calc(72 * var(--u));
+    margin: 0 0 calc(30 * var(--u));
+  }
+
+  .home-page .plan-copy p{
+    max-width: calc(590 * var(--u));
+  }
+
+  .home-page .plan-copy .btn{
+    width: calc(228 * var(--u));
+    justify-content: center;
+  }
+
+  /* ---------- Events banner: 1920 x 1128.78, card 1128 wide ---------- */
+  .home-page .banner-overlay-band{
+    padding: 0;
+  }
+
+  .home-page .banner-overlay-wrap{
+    width: 100%;
+  }
+
+  .home-page .banner-overlay-img{
+    height: calc(1128.78 * var(--u));
+  }
+
+  .home-page .banner-overlay-card{
+    z-index: 1;
+    width: calc(1128 * var(--u));
+    margin: calc(-170 * var(--u)) auto calc(-560 * var(--u));
+    padding: calc(96 * var(--u)) calc(160 * var(--u)) calc(648 * var(--u));
+  }
+
+  .home-page .banner-overlay-card h2{
+    font-size: calc(68 * var(--u));
+    line-height: calc(70 * var(--u));
+    letter-spacing: 0;
+    max-width: calc(560 * var(--u));
+    margin: 0 auto calc(40 * var(--u));
+  }
+
+  .home-page .banner-overlay-card h2 em{
+    font-size: .75em;
+    line-height: calc(100 * var(--u));
+    margin-top: 0;
+  }
+
+  .home-page .banner-overlay-card p{
+    max-width: calc(700 * var(--u));
+    font-size: calc(24 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin: 0 auto calc(38 * var(--u));
+  }
+
+  .home-page .banner-overlay-card .btn{
+    width: calc(288 * var(--u));
+    justify-content: center;
+    margin-top: calc(22 * var(--u));
+  }
+
+  /* ---------- Gallery: 2215.29 x 462.13, 5 photos, 20 gap, overlapping the card ---------- */
+  .home-page .gallery-strip-band{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    background: var(--forest);
+    padding: 0;
+  }
+
+  .home-page .gallery-strip{
+    width: calc(2215.29 * var(--u));
+    margin: 0 0 0 calc(50% - 1107.65 * var(--u));
+    gap: calc(20 * var(--u));
+  }
+
+  .home-page .gallery-strip img{
+    height: calc(462.13 * var(--u));
+  }
+
+  /* ---------- FAQ: list 954 wide, 15 gap ---------- */
+  .home-page .faq-band{
+    background: transparent;
+    padding: calc(303 * var(--u)) 0 calc(187 * var(--u));
+  }
+
+  .home-page .faq-band .faq-shell-center{
+    max-width: 1920px;
+  }
+
+  .home-page .faq-band .tour-intro{
+    max-width: calc(724 * var(--u));
+    margin: 0 auto calc(28 * var(--u));
+    font-size: calc(46 * var(--u));
+    line-height: calc(58 * var(--u));
+  }
+
+  .home-page .faq-caps-title{
+    max-width: calc(840 * var(--u));
+    margin: 0 auto calc(29 * var(--u));
+    font-size: calc(50 * var(--u));
+    line-height: calc(70 * var(--u));
+    letter-spacing: .02em;
+    font-weight: 500;
+  }
+
+  .home-page .faq{
+    width: calc(954 * var(--u));
+    max-width: none;
+  }
+
+  .home-page .faq-center .faq-item{
+    margin-bottom: calc(15 * var(--u));
+    padding: 0 calc(40 * var(--u));
+    background: rgba(255,255,255,.1);
+    border-radius: 0;
+  }
+
+  .home-page .faq-center .faq-q{
+    padding: calc(40 * var(--u)) 0;
+    font-size: calc(24 * var(--u));
+    line-height: calc(38 * var(--u));
+  }
+
+  .home-page .faq-center .faq-item.open .faq-q{
+    padding-bottom: calc(14 * var(--u));
+  }
+
+  .home-page .faq-q .icon{
+    font-size: calc(24 * var(--u));
+  }
+
+  .home-page .faq-item.open .faq-a{
+    max-height: calc(600 * var(--u));
+  }
+
+  .home-page .faq-center .faq-a p{
+    max-width: none;
+    font-size: calc(21 * var(--u));
+    line-height: calc(35 * var(--u));
+    padding-bottom: calc(44 * var(--u));
+    text-align: left;
+  }
+
+  /* ---------- Footer: 1019 tall, top rule full width ---------- */
+  .figma-page .showbarn-footer{
+    background: transparent;
+    border-top: 1px solid var(--grid-line);
+    padding: calc(214 * var(--u)) 0 0;
+  }
+
+  .figma-page .footer-shell{
+    width: calc(1440 * var(--u));
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .figma-page .footer-mark{
+    max-width: calc(620 * var(--u));
+    margin: 0 auto calc(73 * var(--u));
+  }
+
+  .figma-page .footer-mark img{
+    height: calc(118 * var(--u));
+  }
+
+  .figma-page .footer-mark p{
+    font-size: calc(23 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin-top: calc(36 * var(--u));
+  }
+
+  .figma-page .footer-cols{
+    width: calc(1216 * var(--u));
+    margin: 0 auto calc(96 * var(--u));
+    padding: 0;
+    gap: 0;
+  }
+
+  .figma-page .footer-cols h4{
+    font-size: calc(20 * var(--u));
+    margin-bottom: calc(38 * var(--u));
+  }
+
+  .figma-page .footer-cols p,
+  .figma-page .footer-cols a{
+    font-size: calc(20 * var(--u));
+    line-height: calc(32 * var(--u));
+    margin-bottom: calc(18 * var(--u));
+  }
+
+  .figma-page .footer-cols p a{
+    margin-bottom: 0;
+  }
+
+  .figma-page .footer-bottom{
+    border-top: 1px solid var(--grid-line);
+    padding: calc(56 * var(--u)) calc(98 * var(--u)) calc(52 * var(--u));
+    font-size: calc(20 * var(--u));
+  }
+}
+
+/* ===========================================================
+   WEDDINGS PAGE — desktop measurements from the Figma frame
+   (shares nav, hero, buttons and footer with .figma-page above)
+   =========================================================== */
+@media (min-width: 1101px){
+  .wedding-page main{
+    z-index: 2;
+  }
+
+  /* ---------- Hero: same frame as home, copy anchored to the bottom ---------- */
+  .wedding-page .hero-slideshow{
+    height: calc(1208.63 * var(--u));
+  }
+
+  .wedding-page .hero-shell.wedding-hero .hero-copy{
+    position: absolute;
+    left: calc(343 * var(--u));
+    bottom: calc(121 * var(--u));
+    width: calc(1100 * var(--u));
+  }
+
+  .wedding-page .hero-shell.wedding-hero .hero-copy h1{
+    max-width: none;
+    font-size: calc(64 * var(--u));
+    line-height: calc(72 * var(--u));
+  }
+
+  /* ---------- Intro rows: image 1 flush left, image 2 ends at the x=1680 grid line ---------- */
+  .wedding-page .intro-rows-band{
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    padding: calc(213 * var(--u)) 0 0;
+  }
+
+  .wedding-page .intro-rows-band::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(540 * var(--u));
+    height: 1px;
+    background: var(--grid-line);
+  }
+
+  .wedding-page .intro-rows-band .section-shell{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .wedding-page .intro-heading-row{
+    height: calc(327 * var(--u));
+    padding: 0 0 0 calc(362 * var(--u));
+  }
+
+  .wedding-page .intro-heading{
+    max-width: calc(760 * var(--u));
+    font-size: calc(56 * var(--u));
+    line-height: calc(72 * var(--u));
+  }
+
+  .wedding-page .intro-row,
+  .wedding-page .intro-row-reverse{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+  }
+
+  .wedding-page .intro-row-copy p{
+    max-width: none;
+    font-size: calc(28 * var(--u));
+    line-height: calc(45 * var(--u));
+    text-align: left;
+  }
+
+  .wedding-page .intro-row-image img{
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Row 1: image 901.55 x 716.59 at x=1.48, copy x=1008 */
+  .wedding-page .intro-row-reverse .intro-row-image{
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    margin-left: calc(1.48 * var(--u));
+    width: calc(901.55 * var(--u));
+  }
+
+  .wedding-page .intro-row-reverse .intro-row-image img{
+    height: calc(716.59 * var(--u));
+  }
+
+  .wedding-page .intro-row-reverse .intro-row-copy{
+    flex: none;
+    order: 2;
+    margin-left: calc(105 * var(--u));
+    width: calc(570 * var(--u));
+    padding-top: calc(224 * var(--u));
+  }
+
+  /* Seal: 300 circle centred on the corner where the two photos meet */
+  .wedding-page .stamp-row{
+    position: absolute;
+    left: calc(753 * var(--u));
+    top: calc(1107 * var(--u));
+    margin: 0;
+  }
+
+  .wedding-page .stamp-badge{
+    width: calc(300 * var(--u));
+    height: calc(300 * var(--u));
+  }
+
+  /* Row 2: copy x=362, image 776.97 x 739.68 at x=903, overlapping the cream band by 83 */
+  .wedding-page .intro-row:not(.intro-row-reverse){
+    margin-bottom: calc(-82.92 * var(--u));
+  }
+
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-copy{
+    flex: none;
+    margin-left: calc(362 * var(--u));
+    width: calc(540 * var(--u));
+    padding-top: calc(120 * var(--u));
+  }
+
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-image{
+    flex: none;
+    margin-left: calc(1 * var(--u));
+    width: calc(776.97 * var(--u));
+  }
+
+  .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-image img{
+    height: calc(739.68 * var(--u));
+  }
+
+  /* ---------- Dreams band: 1920 x 1973.49, photo group 732.48 wide at x=613.9 ---------- */
+  .wedding-page .dreams-band{
+    height: calc(1973.49 * var(--u));
+    padding: calc(347 * var(--u)) 0 0;
+  }
+
+  .wedding-page .dreams-shell{
+    position: static;
+    width: calc(1542 * var(--u));
+  }
+
+  .wedding-page .dreams-photo{
+    left: calc(613.9 * var(--u));
+    top: calc(556 * var(--u));
+    width: calc(732.48 * var(--u));
+  }
+
+  /* ---------- Plans ---------- */
+  .wedding-page .dark-plans{
+    position: relative;
+    background: transparent;
+    padding: calc(230 * var(--u)) 0 0;
+  }
+
+  .wedding-page .dark-plans::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(1384 * var(--u));
+    height: 1px;
+    background: var(--grid-line);
+  }
+
+  .wedding-page .dark-plans .section-shell{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .wedding-page .dark-plans .plan-row{
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .wedding-page .dark-plans .plan-row img{
+    flex: none;
+    border-radius: 0;
+  }
+
+  .wedding-page .plan-copy{
+    flex: none;
+    padding: 0;
+  }
+
+  .wedding-page .plan-copy .eyebrow{
+    font-size: calc(20 * var(--u));
+    line-height: calc(36 * var(--u));
+    margin: 0 0 calc(30 * var(--u));
+  }
+
+  .wedding-page .plan-copy h3{
+    font-size: calc(70 * var(--u));
+    line-height: calc(72 * var(--u));
+    margin: 0 0 calc(30 * var(--u));
+  }
+
+  .wedding-page .plan-copy p{
+    font-size: calc(28 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin-bottom: calc(38 * var(--u));
+    text-align: left;
+  }
+
+  /* Full planning: copy x=362, image 848 x 922 flush right */
+  .wedding-page .plan-row:nth-child(1){
+    height: calc(922 * var(--u));
+    margin-bottom: calc(417 * var(--u));
+  }
+
+  .wedding-page .plan-row:nth-child(1) .plan-copy{
+    margin: calc(29 * var(--u)) 0 0 calc(362 * var(--u));
+    width: calc(620.66 * var(--u));
+  }
+
+  .wedding-page .plan-row:nth-child(1) img{
+    margin-left: auto;
+    width: calc(848 * var(--u));
+    height: calc(922 * var(--u));
+  }
+
+  /* Partial planning: group 1558 x 850 at x=0, 2px bottom rule */
+  .wedding-page .dark-plans .plan-row:nth-child(2){
+    width: calc(1558 * var(--u));
+    height: calc(850 * var(--u));
+    margin-bottom: calc(189 * var(--u));
+    border-bottom: 2px solid var(--grid-line);
+  }
+
+  .wedding-page .plan-row:nth-child(2) img{
+    width: calc(837 * var(--u));
+    height: calc(794 * var(--u));
+  }
+
+  .wedding-page .plan-row:nth-child(2) .plan-copy{
+    margin: 0 0 0 calc(86 * var(--u));
+    width: calc(635 * var(--u));
+  }
+
+  .wedding-page .plan-row:nth-child(1) .plan-copy p,
+  .wedding-page .plan-row:nth-child(2) .plan-copy p{
+    margin-bottom: calc(30 * var(--u));
+  }
+
+  /* Corporate events: light green band 1340 tall, image 848 x 1029.71 flush right */
+  .wedding-page .dark-plans .plan-row:nth-child(3){
+    padding: calc(164 * var(--u)) 0 calc(146 * var(--u));
+    border-image: conic-gradient(#68725d 0 0) fill 0 / 0 / 0 100vmax;
+  }
+
+  .wedding-page .plan-row:nth-child(3) .plan-copy{
+    margin: calc(41 * var(--u)) 0 0 calc(362 * var(--u));
+    width: calc(620.66 * var(--u));
+  }
+
+  .wedding-page .plan-row:nth-child(3) img{
+    margin-left: auto;
+    width: calc(848 * var(--u));
+    height: calc(1029.71 * var(--u));
+  }
+
+  /* ---------- CTA: banner 1976.07 x 1128.78 at x=-28.03, card 1128 wide ---------- */
+  .wedding-page .banner-overlay-band{
+    overflow-x: clip;
+    padding: 0;
+  }
+
+  .wedding-page .banner-overlay-wrap{
+    width: 100%;
+  }
+
+  .wedding-page .banner-overlay-img.tall{
+    width: calc(1976.07 * var(--u));
+    max-width: none;
+    height: calc(1128.78 * var(--u));
+    margin-left: calc(-28.03 * var(--u));
+  }
+
+  .wedding-page .banner-overlay-card.cta-card{
+    display: flex;
+    flex-direction: column;
+    gap: calc(46 * var(--u));
+    width: calc(1128 * var(--u));
+    margin: calc(-139.4 * var(--u)) auto calc(-155 * var(--u));
+    padding: calc(100 * var(--u));
+    background: #ffffff;
+  }
+
+  .wedding-page .cta-card h2{
+    font-size: calc(68 * var(--u));
+    line-height: calc(70 * var(--u));
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .wedding-page .cta-card h2 em{
+    font-size: .75em;
+    line-height: calc(100 * var(--u));
+    margin-top: 0;
+  }
+
+  .wedding-page .cta-card p{
+    max-width: none;
+    font-size: calc(24 * var(--u));
+    line-height: calc(38 * var(--u));
+    margin: 0;
+  }
+
+  .wedding-page .cta-card .contact-form{
+    margin-top: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .wedding-page .cta-card .form-row{
+    gap: calc(16 * var(--u));
+    margin-bottom: calc(16 * var(--u));
+  }
+
+  .wedding-page .cta-card .form-group{
+    padding: calc(12 * var(--u)) calc(20 * var(--u));
+  }
+
+  .wedding-page .cta-card .form-group label{
+    font-size: calc(18 * var(--u));
+  }
+
+  .wedding-page .cta-card .field-icon{
+    width: calc(18 * var(--u));
+    height: calc(18 * var(--u));
+  }
+
+  .wedding-page .cta-card input,
+  .wedding-page .cta-card select,
+  .wedding-page .cta-card textarea{
+    font-size: calc(20 * var(--u));
+  }
+
+  .wedding-page .cta-card textarea{
+    min-height: calc(50 * var(--u));
+  }
+
+  .wedding-page .cta-card .contact-submit{
+    height: calc(58 * var(--u));
+  }
+
+  /* ---------- Footer: 1440 x 1062.8 bordered box at x=240 ---------- */
+  .wedding-page .showbarn-footer{
+    border-top: none;
+    padding: 0;
+  }
+
+  .wedding-page .footer-shell{
+    border: 1px solid var(--grid-line);
+    padding-top: calc(240 * var(--u));
+  }
+
+  .wedding-page .footer-bottom{
+    padding-bottom: calc(69 * var(--u));
+  }
+}

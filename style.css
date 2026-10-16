@@ -1642,6 +1642,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 @media (min-width: 1101px){
   .figma-page{
     --u: calc(min(100vw, 1920px) / 1920);
+    /* Same image-top-to-heading gap on every desktop hero. */
+    --hero-text-top-gap: calc(260 * var(--u));
     /* Figma guide lines are hidden on the live site; set a colour here to show them */
     --grid-line: transparent;
     --page-left: max(0px, calc((100% - 1920 * var(--u)) / 2));
@@ -1756,7 +1758,7 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   .home-page .hero-shell.home-hero .hero-copy{
     position: absolute;
     left: calc(343 * var(--u));
-    top: calc(260 * var(--u));
+    top: var(--hero-text-top-gap);
     width: calc(1100 * var(--u));
   }
 
@@ -2213,7 +2215,7 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   .wedding-page .hero-shell.wedding-hero .hero-copy{
     position: absolute;
     left: calc(343 * var(--u));
-    top: calc(260 * var(--u));
+    top: var(--hero-text-top-gap);
     bottom: auto;
     width: calc(1100 * var(--u));
   }

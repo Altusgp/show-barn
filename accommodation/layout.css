@@ -63,7 +63,7 @@
   .accommodation-page .hero-shell.accommodation-hero .hero-copy {
     position: absolute;
     left: calc(343 * var(--u));
-    top: calc(260 * var(--u));
+    top: var(--hero-text-top-gap);
     bottom: auto;
     width: calc(1000 * var(--u));
   }

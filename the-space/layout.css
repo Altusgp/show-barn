@@ -46,7 +46,7 @@
   .space-page .hero-shell.space-hero .hero-copy {
     position: absolute;
     left: calc(343 * var(--u));
-    top: calc(260 * var(--u));
+    top: var(--hero-text-top-gap);
     width: calc(1100 * var(--u));
   }
   .space-page .hero-text { margin-bottom: calc(20 * var(--u)); }

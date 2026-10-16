@@ -1756,7 +1756,7 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   .home-page .hero-shell.home-hero .hero-copy{
     position: absolute;
     left: calc(343 * var(--u));
-    top: calc(604 * var(--u));
+    top: calc(260 * var(--u));
     width: calc(1100 * var(--u));
   }
 
@@ -2205,7 +2205,7 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
     z-index: 2;
   }
 
-  /* ---------- Hero: same frame as home, copy anchored to the bottom ---------- */
+  /* ---------- Hero: same frame as home, copy at the marked upper-left position ---------- */
   .wedding-page .hero-slideshow{
     height: calc(1208.63 * var(--u));
   }
@@ -2213,7 +2213,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   .wedding-page .hero-shell.wedding-hero .hero-copy{
     position: absolute;
     left: calc(343 * var(--u));
-    bottom: calc(121 * var(--u));
+    top: calc(260 * var(--u));
+    bottom: auto;
     width: calc(1100 * var(--u));
   }
 

@@ -9,6 +9,19 @@
   font-display: swap;
 }
 
+.accommodation-page .cabin-section-title {
+  font-family: 'Cormorant Garamond', 'Dreams Serif', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto 2rem;
+}
+.accommodation-page .cabin-section-title em {
+  font-family: 'Imperial Script', 'Dreams Script', cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
 @media (min-width: 1101px) {
   .accommodation-page {
     --grid-line: rgba(152, 160, 146, .98);
@@ -50,7 +63,8 @@
   .accommodation-page .hero-shell.accommodation-hero .hero-copy {
     position: absolute;
     left: calc(343 * var(--u));
-    bottom: calc(121 * var(--u));
+    top: calc(260 * var(--u));
+    bottom: auto;
     width: calc(1000 * var(--u));
   }
 
@@ -144,43 +158,63 @@
   .accommodation-page #cabins {
     background: #fff;
     color: #343c31;
-    padding: calc(370.33 * var(--u)) 0 calc(70 * var(--u));
+    padding: calc(143.92 * var(--u)) 0;
     min-height: calc(1417.19 * var(--u));
   }
+  /* Heading: x=451.66, y=4465.02, 1016.69 x 153. */
+  .accommodation-page .cabin-section-title {
+    width: calc(1016.69 * var(--u));
+    min-height: calc(153 * var(--u));
+    margin: 0 0 calc(73.41 * var(--u)) calc(451.66 * var(--u));
+    font-size: calc(60 * var(--u));
+    line-height: calc(70 * var(--u));
+    letter-spacing: -.022em;
+    color: #3f4a3d;
+  }
+  .accommodation-page .cabin-section-title em {
+    font-size: calc(80 * var(--u));
+    line-height: calc(80 * var(--u));
+    letter-spacing: 0;
+  }
   .accommodation-page .cabin-grid {
-    width: calc(1874.55 * var(--u));
-    margin-inline: auto;
+    width: calc(1859.97 * var(--u));
+    margin: 0 0 0 calc(22.73 * var(--u));
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: calc(33.15 * var(--u));
+    gap: calc(25.86 * var(--u));
   }
   .accommodation-page .cabin-card { border-radius: 0; box-shadow: none; }
   .accommodation-page .cabin-card img { height: calc(459.11 * var(--u)); }
   .accommodation-page .cabin-card-body {
-    padding: calc(32 * var(--u)) calc(40 * var(--u)) 0;
+    padding: calc(45.08 * var(--u)) 0 0;
     text-align: center;
   }
   .accommodation-page .cabin-card-body h3 {
-    min-height: calc(56 * var(--u));
-    font-size: calc(46 * var(--u));
-    line-height: calc(56 * var(--u));
+    min-height: calc(46 * var(--u));
+    font-family: 'Cormorant Garamond', 'Dreams Serif', serif;
+    font-weight: 400;
+    font-size: calc(45 * var(--u));
+    line-height: calc(46 * var(--u));
+    letter-spacing: -.022em;
+    color: #3f4a3d;
     margin-bottom: calc(20 * var(--u));
   }
   .accommodation-page .cabin-card-body p.desc {
+    width: calc(427 * var(--u));
     min-height: calc(56 * var(--u));
     font-size: calc(20 * var(--u));
     line-height: calc(28 * var(--u));
-    margin-bottom: calc(20 * var(--u));
+    margin: 0 auto calc(20 * var(--u));
   }
   .accommodation-page .cabin-card-body ul {
     width: calc(427 * var(--u));
     min-height: calc(146 * var(--u));
-    margin: 0 auto calc(28 * var(--u));
+    margin: 0 auto calc(52.75 * var(--u));
     text-align: left;
   }
   .accommodation-page .cabin-card-body li {
     padding-left: calc(30 * var(--u));
-    font-size: calc(20 * var(--u));
-    line-height: calc(28 * var(--u));
+    font-size: calc(18 * var(--u));
+    line-height: calc(26 * var(--u));
     margin-bottom: calc(12 * var(--u));
   }
   .accommodation-page .cabin-card-body li::before {
@@ -189,8 +223,16 @@
     font-size: calc(12 * var(--u));
   }
   .accommodation-page .cabin-card-body .btn {
+    width: calc(295 * var(--u));
+    height: calc(58 * var(--u));
     max-width: 100%;
-    padding-inline: calc(24 * var(--u));
+    padding: 0 calc(35 * var(--u));
+    gap: calc(10 * var(--u));
+    justify-content: center;
+    background: #c7b79a;
+    color: #303b30;
+    border: 0;
+    border-bottom: 2px solid #fff;
   }
 
   /* Banner y=5738.29; height estimated from the partially clipped inspector. */
@@ -302,12 +344,14 @@
   }
   /* Heading: x=362, y=8334.93, 552.01 x 223. */
   .accommodation-page .plan-row:first-child h3 {
+    color: #3f4a3d;
     width: calc(552.01 * var(--u));
     min-height: calc(223 * var(--u));
     margin-bottom: calc(66.48 * var(--u));
     letter-spacing: -.022em;
   }
   .accommodation-page .plan-row:first-child h3 em {
+    color: inherit;
     font-size: calc(80 * var(--u));
     line-height: calc(80 * var(--u));
   }
@@ -323,7 +367,7 @@
     min-height: calc(786.88 * var(--u));
     margin-top: calc(200 * var(--u));
     padding: 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: none;
   }
   .accommodation-page .plan-row:last-child img {
     order: 1;

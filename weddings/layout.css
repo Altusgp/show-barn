@@ -57,8 +57,8 @@
   }
   .wedding-page .intro-row-reverse .intro-row-copy p {
     min-height: calc(282 * var(--u));
-    font-size: calc(35 * var(--u));
-    line-height: calc(47 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
   }
 
   /* Second photo: x=903.03, y=2659.63, 776.97 x 739.68. */
@@ -73,8 +73,8 @@
   }
   .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-copy p {
     min-height: calc(342 * var(--u));
-    font-size: calc(28 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
   }
   .wedding-page .intro-row:not(.intro-row-reverse) .intro-row-image {
     margin-left: calc(91.14 * var(--u));
@@ -129,7 +129,7 @@
     line-height: calc(64 * var(--u));
   }
   .wedding-page .cta-card h2 em { line-height: calc(88 * var(--u)); }
-  .wedding-page .cta-card p { line-height: calc(36 * var(--u)); }
+  .wedding-page .cta-card p { line-height: calc(30 * var(--u)); }
   .wedding-page .cta-card .field-icon {
     width: calc(18 * var(--u));
     height: calc(18 * var(--u));

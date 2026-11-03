@@ -103,11 +103,11 @@
   }
   .accommodation-page .intro-row-copy p {
     max-width: none;
-    font-size: calc(35 * var(--u));
-    line-height: calc(47 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     text-align: left;
   }
-  .accommodation-page .intro-row-copy p + p { margin-top: calc(47 * var(--u)); }
+  .accommodation-page .intro-row-copy p + p { margin-top: calc(30 * var(--u)); }
   .accommodation-page .intro-row-image { flex: none; }
   .accommodation-page .intro-row-image img {
     width: 100%;
@@ -276,8 +276,8 @@
   }
   .accommodation-page .feature-cream-copy p {
     color: rgba(245,241,230,.85);
-    font-size: calc(28 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     margin-bottom: calc(24 * var(--u));
     text-align: left;
   }
@@ -320,8 +320,8 @@
     margin-bottom: calc(60 * var(--u));
   }
   .accommodation-page .plan-copy p:not(.eyebrow) {
-    font-size: calc(28 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     text-align: left;
     margin-bottom: calc(45 * var(--u));
   }

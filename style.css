@@ -405,8 +405,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
 .showbarn-page.contact-page .contact-panel-copy p{
   color: #596055;
-  font-size: .96rem;
-  line-height: 1.78;
+  font-size: .9rem;
+  line-height: 1.6;
   margin-bottom: 1.15rem;
   max-width: 32rem;
   text-align: justify;
@@ -786,8 +786,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 .showbarn-page .intro-row-copy p{
   max-width: 30rem;
   color: rgba(245,241,230,.85);
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: .9rem;
+  line-height: 1.6;
   text-align: justify;
   text-align-last: left;
 }
@@ -908,8 +908,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 .showbarn-page .feature-cream-copy p{
   max-width: 34rem;
   color: #5a594f;
-  font-size: .96rem;
-  line-height: 1.8;
+  font-size: .9rem;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
   text-align: justify;
   text-align-last: left;
@@ -963,8 +963,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
 .showbarn-page .plan-copy p{
   color: rgba(245,241,230,.78);
-  font-size: .95rem;
-  line-height: 1.8;
+  font-size: .9rem;
+  line-height: 1.6;
   margin-bottom: 1.4rem;
   text-align: justify;
   text-align-last: left;
@@ -1100,8 +1100,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
 .showbarn-page .banner-overlay-card p{
   color: #605d51;
-  font-size: .92rem;
-  line-height: 1.8;
+  font-size: .9rem;
+  line-height: 1.6;
   max-width: 34rem;
   margin: 0 auto 1.2rem;
 }
@@ -1381,6 +1381,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 }
 
 .showbarn-page .faq-center .faq-a p{
+  font-size: .9rem;
+  line-height: 1.6;
   padding-bottom: 1.3rem;
   text-align: justify;
   text-align-last: left;
@@ -1811,8 +1813,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
   .home-page .intro-row-copy p{
     max-width: none;
-    font-size: calc(33 * var(--u));
-    line-height: calc(47 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     text-align: left;
   }
 
@@ -1944,8 +1946,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   .home-page .feature-cream-copy p,
   .home-page .plan-copy p{
     max-width: calc(564 * var(--u));
-    font-size: calc(24 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     margin-bottom: calc(38 * var(--u));
     text-align: left;
   }
@@ -2046,8 +2048,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
   .home-page .banner-overlay-card p{
     max-width: calc(700 * var(--u));
-    font-size: calc(24 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     margin: 0 auto calc(38 * var(--u));
   }
 
@@ -2134,8 +2136,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
   .home-page .faq-center .faq-a p{
     max-width: none;
-    font-size: calc(21 * var(--u));
-    line-height: calc(35 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     padding-bottom: calc(44 * var(--u));
     text-align: left;
   }
@@ -2271,8 +2273,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
   .wedding-page .intro-row-copy p{
     max-width: none;
-    font-size: calc(28 * var(--u));
-    line-height: calc(45 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     text-align: left;
   }
 
@@ -2409,8 +2411,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
   }
 
   .wedding-page .plan-copy p{
-    font-size: calc(28 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     margin-bottom: calc(38 * var(--u));
     text-align: left;
   }
@@ -2514,8 +2516,8 @@ footer{ background:var(--forest-deep); color:rgba(255,255,255,.75); padding:4.5r
 
   .wedding-page .cta-card p{
     max-width: none;
-    font-size: calc(24 * var(--u));
-    line-height: calc(38 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     margin: 0;
   }
 

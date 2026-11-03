@@ -69,8 +69,8 @@
     grid-column: 1;
     max-width: none;
     margin: 0;
-    font-size: calc(20 * var(--u));
-    line-height: calc(28 * var(--u));
+    font-size: calc(22 * var(--u));
+    line-height: calc(30 * var(--u));
     color: #f5f1e6;
     text-align: left;
   }

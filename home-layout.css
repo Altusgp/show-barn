@@ -133,7 +133,7 @@
     line-height: calc(64 * var(--u));
   }
   .home-page .banner-overlay-card h2 em { line-height: calc(80 * var(--u)); }
-  .home-page .banner-overlay-card p { max-width: none; line-height: calc(32 * var(--u)); }
+  .home-page .banner-overlay-card p { max-width: none; line-height: calc(30 * var(--u)); }
   .home-page .banner-overlay-card h2,
   .home-page .banner-overlay-card p,
   .home-page .banner-overlay-card .btn { margin: 0; }
